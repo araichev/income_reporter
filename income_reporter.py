@@ -100,7 +100,7 @@ def make_data_frame(files, nweeks=100):
         dates = pd.date_range('20120101', periods=nweeks, freq='w')
         data = pd.DataFrame(index=dates, columns=['income', 'hours'])
         data['hours'] = np.random.randint(0, 25, nweeks)
-        data['income'] = [h*np.random.randint(50, 85) for h in data['hours']]
+        data['income'] = [h*np.random.randint(50, 100) for h in data['hours']]
     return data
 
 def process_csv_file(csvfile):
