@@ -30,4 +30,4 @@ Todo
 
 Example
 --------
-For a live example of a report made from randomly generated data `see this gist <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
+For a live example of a report made from randomly generated data `see this rawgithub snippet <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
