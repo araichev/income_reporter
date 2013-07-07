@@ -1,5 +1,5 @@
-README
-=======
+Income Reporter
+=================
 This is a little Python 2.7 command-line program to make HTML income 
 reports given a list of CSV files of income items.
 
@@ -19,10 +19,6 @@ dollars.
 Uses Pandas for data manipulation and a local copy of NVD3 
 for Javascript charts.
 
-Authors
---------
-- Alex Raichev (2013-05-26)
-
 Todo
 -----
 - Add doctest examples
@@ -30,4 +26,16 @@ Todo
 
 Example
 --------
-For a live example of a report made from randomly generated data `see this rawgithub snippet <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
+For a live example of a report made from randomly generated data, `see this rawgithub snippet <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
+
+Dependencies
+-------------
+Pandas.
+
+Authors
+--------
+- Alex Raichev (2013-05-26)
+
+License
+--------
+GPLv3.  See `COPYING.txt`.

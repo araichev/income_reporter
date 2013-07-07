@@ -18,7 +18,7 @@ dollars.
 Uses Pandas for data manipulation and a local copy of NVD3 
 for Javascript charts.
 
-AUTHORS
+Authors
 --------
 - Alex Raichev (2013-05-26)
 
@@ -33,6 +33,13 @@ TODO
 - Add doctest examples
 - Doctest
 
+#*****************************************************************************
+#       Copyright (C) 2013 Alex Raichev <alex@raichev.net>
+#
+#  Distributed under the terms of the GNU General Public License Version 3
+#  (GPLv3) as published by the Free Software Foundation.
+#                  http://www.gnu.org/licenses/
+#*****************************************************************************
 """
 from __future__ import division, print_function
 import pandas as pd
