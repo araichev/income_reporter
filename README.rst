@@ -38,4 +38,4 @@ Authors
 
 License
 --------
-GPLv3.  See `COPYING.txt`.
+GPLv3.  See ``COPYING.txt``.
