@@ -28,7 +28,6 @@ Todo
 - Add doctest examples
 - Doctest
 
-Screenshot
-----------
-.. image:: screen_shot.png
-   :align: left
+Example
+--------
+For a live example of a report made from randomly generated data `see this gist <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
