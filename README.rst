@@ -1,7 +1,7 @@
 Income Reporter
 =================
-This is a little Python 2.7 command-line program to make HTML income 
-reports given a list of CSV files of income items.
+This is a little Python 2.7 command-line program to make an HTML income 
+report given a list of CSV files of income items.
 
 The first (header) row of each given CSV file will be ignored.
 Only the first three columns of each given CSV file will be processed
