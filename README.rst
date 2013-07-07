@@ -34,7 +34,7 @@ TODO
 - Add doctest examples
 - Doctest
 
-.. raw:: html
+..raw:: html
 
 
     <head>
