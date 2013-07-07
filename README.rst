@@ -26,7 +26,7 @@ Todo
 
 Example
 --------
-The file `income_reporter.html` contains an example of a report made from randomly generated data and can be viewed live via rawgithub.com `here <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
+The file ``income_reporter.html`` contains an example of a report made from randomly generated data and can be viewed live via rawgithub.com `here <https://rawgithub.com/araichev/income_reporter/master/income_reporter.html>`_.
 
 Dependencies
 -------------
