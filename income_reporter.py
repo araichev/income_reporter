@@ -1,5 +1,5 @@
 """
-This is a little Python 2.7 command-line program to make an HTML income 
+This is a little Python 3.3 command-line program to make an HTML income 
 report given a list of CSV files of income items.
 
 The first (header) row of each given CSV file will be ignored.
@@ -27,6 +27,7 @@ CHANGELOG
 - 2013-05-26: Initial version.
 - 2013-07-06: Refactored using the argparse module.
 - 2013-07-08: Refactored to use a local NVD3 installation.
+- 2013-08-10: Corrected Pandas frequency constant bug.
 
 TODO
 -----
@@ -97,7 +98,7 @@ def make_data_frame(files, nweeks=100):
         data = data.drop_duplicates().sort()
     else:
         # Generate test data
-        dates = pd.date_range('20120101', periods=nweeks, freq='w')
+        dates = pd.date_range('20120101', periods=nweeks, freq='W')
         data = pd.DataFrame(index=dates, columns=['income', 'hours'])
         data['hours'] = np.random.randint(0, 25, nweeks)
         data['income'] = [h*np.random.randint(50, 100) for h in data['hours']]
@@ -115,8 +116,8 @@ def process_csv_file(csvfile):
     2. The amount of income received (without currency symbols such as $)
     3. The number of hours worked for that income
 
-    Name these columns 'date' (index column), 'income', and 'hours',
-    respectively.
+    Will name these columns in the resulting data frame as 
+    'date' (index column), 'income', and 'hours', respectively.
     """
     data = pd.read_csv(csvfile, header=0, usecols=[0, 1, 2], 
                        names=['date', 'income', 'hours'], index_col=0,
@@ -125,11 +126,11 @@ def process_csv_file(csvfile):
 
 def round_date(date, freq='M', past=True):
     """
-    Suppose `freq == 'm'`.
+    Suppose `freq == 'M'`.
     If `past == True`, then round the given date to the beginning 
     of its month.
     Otherwise, round the given date to the end of its month.
-    Suppose `freq == 'w'`.
+    Suppose `freq == 'W'`.
     If `past == True`, then round the given date to the Monday of its week.
     Otherwise, round the given date to the Sunday of its week.
     For all other values of `freq`, return the given date unchanged.
@@ -137,13 +138,13 @@ def round_date(date, freq='M', past=True):
     from calendar import monthrange
     from dateutil.relativedelta import relativedelta
 
-    if freq == 'm':
+    if freq == 'M':
         if past:
             day = 1
         else:
             day = monthrange(date.year, date.month)[1]            
         date = dt.date(date.year, date.month, day)
-    elif freq == 'w':
+    elif freq == 'W':
         if past:
             date = date - dt.timedelta(date.weekday())
         else:
