@@ -76,9 +76,9 @@ def parse_args():
       '''))
     parser.add_argument('infiles', nargs='*', metavar='input_file',
       help='a CSV file of income items (default: randomly generated data)')
-    parser.add_argument('-o', '--outfile', nargs=1, default=['income_reporter.html'], 
+    parser.add_argument('-o', '--outfile', nargs=1, default=['report.html'], 
       metavar='output_file',
-      help="path of HTML file output (default: 'income_reporter.html')")
+      help="path of HTML file output (default: 'report.html')")
     return parser.parse_args()
 
 def make_data_frame(files, nweeks=100):
@@ -334,7 +334,7 @@ def plot_nvd3(data, width=700, height=400, currency='NZD ', chart_id='temp'):
 
 
 def report_nvd3(summaries, output_file, currency='NZD ', 
-                css='income_reporter.css'):
+                css='report.css'):
     """
     Given `summaries`, a list of pairs (data, heading), where data is 
     a Pandas data frame of income items and heading is a string, 
