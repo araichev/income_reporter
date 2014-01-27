@@ -88,8 +88,8 @@ def make_data_frame(files, nweeks=100):
     frame, remove duplicate lines, sort by date, and return the resulting
     data frame.    
 
-    If `files` is empty, then return a data frame of `nweeks` weeks worth of
-    random data.
+    If `files` is empty, then return a data frame of the last `nweeks` 
+    weeks worth of random data.
     """
     import numpy as np
 
@@ -98,7 +98,8 @@ def make_data_frame(files, nweeks=100):
         data = data.drop_duplicates().sort()
     else:
         # Generate test data
-        dates = pd.date_range('20120101', periods=nweeks, freq='W')
+        dates = pd.date_range(end=dt.datetime.today(), periods=nweeks, 
+          freq='W')
         data = pd.DataFrame(index=dates, columns=['income', 'hours'])
         data['hours'] = np.random.randint(0, 25, nweeks)
         data['income'] = [h*np.random.randint(50, 100) for h in data['hours']]
