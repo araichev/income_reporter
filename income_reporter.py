@@ -42,7 +42,7 @@ TODO
 #                  http://www.gnu.org/licenses/
 #*****************************************************************************
 """
-# from __future__ import division, print_function
+from __future__ import division, print_function
 import pandas as pd
 import datetime as dt
 
@@ -219,14 +219,18 @@ def get_tax_year_slice(data, year=None, start_month=4, freq='M',
     Given a Pandas data frame of income items, resample it by the given
     Pandas frequency `freq`, and return the data slice for the twelve month
     period starting on the given year and month.
-    Default to the current year and to the beginning of the New Zealand
+    Default to the current tax year and to the beginning of the New Zealand
     tax year, namely 1 April. 
     """
     from dateutil.relativedelta import relativedelta
 
     data = data.resample(freq, how='sum').fillna(0)
+    today = dt.datetime.today()
     if year is None:
-        year = dt.datetime.today().year
+        # Set the year to the current tax year
+        year = today.year
+        if today.month < start_month:
+            year -= 1 
     start = dt.date(year, start_month, 1)
     end = start + relativedelta(days=+364)       
     result = data[start:end]
