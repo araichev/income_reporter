@@ -35,7 +35,3 @@ Pandas.
 Authors
 --------
 - Alex Raichev (2013-05-26)
-
-License
---------
-GPLv3.  See ``COPYING.txt``.
