@@ -85,7 +85,7 @@ def make_data_frame(files, nweeks=100):
     """
     Given a list of CSV files of income items, convert each one into a 
     Pandas data frame object, combine the data frames into one data
-    frame, remove duplicate lines, sort by date, and return the resulting
+    frame, sort by date, and return the resulting
     data frame.    
 
     If `files` is empty, then return a data frame of the last `nweeks` 
@@ -95,7 +95,7 @@ def make_data_frame(files, nweeks=100):
 
     if files:
         data = pd.concat([process_csv_file(f) for f in files])
-        data = data.drop_duplicates().sort()
+        data = data.sort()
     else:
         # Generate test data
         dates = pd.date_range(end=dt.datetime.today(), periods=nweeks, 
